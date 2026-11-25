@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ÉLORA SKIN | Luxury Skincare</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+
+    <div class="announcement">
+        FREE SHIPPING ON ORDERS OVER $75
+    </div>
+
+
+    <!-- Navbar -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">ÉLORA SKIN</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="cart-button" id="openCart">
+                BAG (<span id="cartCount">0</span>)
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="subtitle">THE ART OF SKINCARE</p>
+
+            <h1>
+                Beauty Begins<br>
+                With <span>Care.</span>
+            </h1>
+
+            <p class="description">
+                Discover the beauty of simple skincare.
+                Thoughtfully crafted formulas for your everyday routine.
+            </p>
+
+            <a href="#products" class="main-button">
+                EXPLORE COLLECTION
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1000"
+                alt="Luxury skincare products">
+        </div>
+
+    </section>
+
+
+    <!-- Benefits -->
+
+    <section class="benefits" id="about">
+
+        <div>
+            <h3>01</h3>
+            <p>Thoughtful Ingredients</p>
+        </div>
+
+        <div>
+            <h3>02</h3>
+            <p>Gentle Formulations</p>
+        </div>
+
+        <div>
+            <h3>03</h3>
+            <p>Everyday Skincare</p>
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+
+    <section class="products" id="products">
+
+        <div class="section-heading">
+            <p>OUR COLLECTION</p>
+            <h2>Discover Your Essentials</h2>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600"
+                    alt="Radiance Serum">
+
+                <h3>Radiance Serum</h3>
+
+                <p class="price">$35.00</p>
+
+                <button
+                    class="discover-btn"
+                    data-id="serum"
+                    data-name="Radiance Serum"
+                    data-price="35"
+                    data-image="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600"
+                    data-description="A lightweight skincare serum designed to complement your everyday skincare routine.">
+
+                    DISCOVER PRODUCT
+
+                </button>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"
+                    alt="Hydrating Cream">
+
+                <h3>Hydrating Cream</h3>
+
+                <p class="price">$42.00</p>
+
+                <button
+                    class="discover-btn"
+                    data-id="cream"
+                    data-name="Hydrating Cream"
+                    data-price="42"
+                    data-image="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"
+                    data-description="A luxurious moisturizing cream for your everyday skincare routine.">
+
+                    DISCOVER PRODUCT
+
+                </button>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600"
+                    alt="Daily Cleanser">
+
+                <h3>Daily Cleanser</h3>
+
+                <p class="price">$28.00</p>
+
+                <button
+                    class="discover-btn"
+                    data-id="cleanser"
+                    data-name="Daily Cleanser"
+                    data-price="28"
+                    data-image="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600"
+                    data-description="A gentle daily cleanser that helps remove everyday impurities.">
+
+                    DISCOVER PRODUCT
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Product Details Modal -->
+
+    <div class="modal-overlay" id="productModal" hidden>
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">&times;</button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Product image">
+            </div>
+
+            <div class="modal-content">
+
+                <p class="modal-subtitle">ÉLORA SKIN COLLECTION</p>
+
+                <h2 id="modalName">Product Name</h2>
+
+                <h3 id="modalPrice">$35.00</h3>
+
+                <p id="modalDescription"></p>
+
+                <button class="modal-button" id="modalAction">
+                    ADD TO BAG
+                </button>
+
+                <p id="cartMessage" class="cart-message" aria-live="polite"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Shopping Cart Modal -->
+
+    <div class="modal-overlay" id="cartModal" hidden>
+
+        <div class="cart-box">
+
+            <button class="close-modal" id="closeCart">&times;</button>
+
+            <h2>Your Shopping Bag</h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-summary">
+
+                <h3>
+                    Total:
+                    <span id="cartTotal">$0.00</span>
+                </h3>
+
+                <button id="checkoutBtn" class="checkout-button">
+                    PROCEED TO CHECKOUT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer id="contact">
+
+        <h2>ÉLORA SKIN</h2>
+
+        <p>Thoughtful skincare. Timeless simplicity.</p>
+
+        <p>© 2026 ÉLORA SKIN. All Rights Reserved.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
